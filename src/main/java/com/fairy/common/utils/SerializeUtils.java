@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 /**
  * @author huanglulu
  * @version 1.0
- * @createTime 2022/4/13 10:52
+ * @date  2022/4/13 10:52
  */
 @Slf4j
 public class SerializeUtils {
@@ -19,7 +19,7 @@ public class SerializeUtils {
      * 序列号
      *
      * @param obj
-     * @return
+     * @return byte[]
      */
     public static byte[] serialize(Object obj) {
         ObjectOutputStream oos = null;

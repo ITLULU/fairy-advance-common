@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * @author huanglulu
  * @version 1.0
- * @createTime 2022/4/2 20:54
+ * @date 2022/4/2 20:54
  */
 @Slf4j
 public class HttpUtils {
@@ -42,7 +42,7 @@ public class HttpUtils {
      *
      * @param url
      * @param headermap
-     * @return
+     * @return CloseableHttpResponse
      */
     public static CloseableHttpResponse HttpGetWithHead(String url, Map<String, String> headermap) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();

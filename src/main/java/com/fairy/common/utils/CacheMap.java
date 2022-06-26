@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author huanglulu
+ * @author hll
  * @version 1.0
- * @data 2022/4/20 15:51
+ * @date  2022/4/20 15:51
  */
 public class CacheMap {
 

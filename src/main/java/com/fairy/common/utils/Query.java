@@ -13,8 +13,7 @@ import java.util.Map;
  *
  * @author 鹿少年
  * @version 1.0
- * @project fairy-repository
- * @createTime 2022/3/20 21:27
+ * @date  2022/3/20 21:27
  */
 public class Query<T> {
 

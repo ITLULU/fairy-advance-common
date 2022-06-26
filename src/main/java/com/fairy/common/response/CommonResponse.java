@@ -4,12 +4,10 @@ import com.fairy.common.enums.ResultEnums;
 import lombok.Data;
 
 /**
- * @author 鹿少年
+ * 通用结果返回
+ * @author hll
  * @version 1.0
- * @project mobile_task
- * @package com.fairy.mobile.utils.response
- * @createTime 2022/1/25 13:39
- * @description
+ * @date  2022/1/25 13:39
  */
 @Data
 public class CommonResponse<T> {

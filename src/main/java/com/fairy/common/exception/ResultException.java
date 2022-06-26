@@ -6,10 +6,9 @@ import com.fairy.common.enums.ResultEnums;
 /**
  * 自定义异常
  *
- * @author 鹿少年
+ * @author hll
  * @version 1.0
- * @project fourth-class
- * @createTime 2022/3/17 15:09
+ * @date  2022/3/17 15:09
  */
 public class ResultException extends RuntimeException {
 

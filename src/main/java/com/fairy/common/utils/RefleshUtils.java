@@ -5,29 +5,33 @@ import java.lang.reflect.Field;
 /**
  * @author huanglulu
  * @version 1.0
- * @createTime 2022/4/2 20:59
+ * @date 2022/4/2 20:59
  */
 public class RefleshUtils {
 
     // 给定一个类，构造出一个对象。
     public Object create(Class clazz) throws Exception {
-        Object obj = clazz.newInstance(); // 构造出对象
+        // 构造出对象
+        Object obj = clazz.newInstance();
         return obj;
     }
 
     /**
-     * @param obj
-     * @param propertyName
-     * @param value
-     * @throws Exception
+     * @param obj 对象
+     * @param propertyName 字段名称
+     * @param value 值
      */
     public void setProperty(Object obj, String propertyName, Object value) {
-        Class clazz = obj.getClass();   //获取字节码对象
-        Field field = null; //暴力反射获取字段  propertyName 字段名
+        //获取字节码对象
+        Class clazz = obj.getClass();
+        //暴力反射获取字段  propertyName 字段名
+        Field field = null;
         try {
             field = clazz.getDeclaredField(propertyName);
-            field.setAccessible(true); //设置访问权限
-            field.set(obj, value);   //设置值
+            //设置访问权限
+            field.setAccessible(true);
+            //设置值
+            field.set(obj, value);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,9 +6,10 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.UnsupportedEncodingException;
 
 /**
+ * Base64加密解密
  * @author huanglulu
  * @version 1.0
- * @createTime 2022/4/2 20:59
+ * @date  2022/4/2 20:59
  */
 public class Base64Util {
     /**

@@ -2,12 +2,11 @@ package com.fairy.common.enums;
 
 /**
  * 相应结果枚举类
- * @author 鹿少年
+ * @author hll
  * @version 1.0
- * @project fourth-class
- * @createTime 2022/3/17 15:09
+ * @date  2022/3/17 15:09
  */
-public enum ResultEnums implements IResult {
+public enum ResultEnums   {
 
     SUCCESS("200", "操作成功"),
     FAILED("500", "操作失败"),
@@ -52,12 +51,10 @@ public enum ResultEnums implements IResult {
         this.message = message;
     }
 
-    @Override
     public String getResultCode() {
         return code;
     }
 
-    @Override
     public String getResultMsg() {
         return message;
     }

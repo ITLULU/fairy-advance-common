@@ -9,12 +9,19 @@ import javax.crypto.spec.IvParameterSpec;
 /**
  * @author huanglulu
  * @version 1.0
- * @createTime 2022/4/18 16:54
+ * @date  2022/4/18 16:54
  */
 public class DES {
 
     public static String KEY = "Q*E&A1a9";
 
+    /**
+     * 加密
+     * @param source 字符串
+     * @param key 秘钥
+     * @return  String
+     * @throws Exception 异常
+     */
     public static String encryptST(String source, String key) throws Exception {
         try {
             Cipher cipher = null;
@@ -41,6 +48,13 @@ public class DES {
         }
     }
 
+    /**
+     * 解密
+     * @param source 加密字符串
+     * @param key 秘钥
+     * @return String
+     * @throws Exception 异常
+     */
     public static String decryptST(String source, String key) throws Exception {
         try {
             Cipher cipher = null;

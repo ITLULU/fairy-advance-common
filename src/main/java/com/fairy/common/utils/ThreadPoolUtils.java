@@ -4,8 +4,7 @@ import java.util.concurrent.*;
 /**
  * @author 鹿少年
  * @version 1.0
- * @project fourth-class
- * @createTime 2022/3/19 17:05
+ * @date  2022/3/19 17:05
  */
 public class ThreadPoolUtils {
 

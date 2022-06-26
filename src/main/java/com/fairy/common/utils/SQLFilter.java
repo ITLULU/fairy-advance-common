@@ -7,8 +7,7 @@ import org.apache.commons.lang3.StringUtils;
  * SQL语句过滤器
  * @author 鹿少年
  * @version 1.0
- * @project fairy-repository
- * @createTime 2022/3/20 21:29
+ * @date  2022/3/20 21:29
  */
 public class SQLFilter {
 

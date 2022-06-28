@@ -39,6 +39,9 @@ public enum ResultEnums   {
     GATEWAY_ERROR("000501", "网关异常"),
     BAD_GATEWAY("000502","错误网关"),
     GATEWAY_NOT_FOUND_SERVICE("0000001", "服务未找到"),
+    AUTHORIZATION_HEADER_IS_EMPTY("500","请求头中的token为空"),
+    MANY_REQUEST_ERROR("500","后端服务触发流控"),
+    BACK_DEGRADE_ERROR("500","后端服务触发降级"),
     ;
 
     /** 编号 */

@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
  * @version 1.0
  * @date 2022/4/2 20:59
  */
-public class RefleshUtils {
+public class RefleshUtil {
 
     // 给定一个类，构造出一个对象。
     public Object create(Class clazz) throws Exception {

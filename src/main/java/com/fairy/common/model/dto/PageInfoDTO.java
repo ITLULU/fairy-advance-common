@@ -6,12 +6,14 @@ import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
-/**分页工具类
+/**
+ * 分页工具类
+ *
  * @author hll
  * @version 1.0
  * @date 2022/6/26 17:49
  */
-public class PageInfoDTO<T> {
+public class PageInfoDTO {
     /**
      * 总记录数
      */
@@ -25,13 +27,13 @@ public class PageInfoDTO<T> {
      */
     private Integer totalPage;
     /**
-     * 开始页数默认从1
+     * 开始页数默认从1  分页插件默认从0
      */
     private Integer startPage;
     /**
      * 列表数据
      */
-    private List<T> list;
+    private List list;
 
     /**
      * 分页
@@ -40,7 +42,7 @@ public class PageInfoDTO<T> {
      * @param pageSize  每页记录数
      * @param startPage 当前页数
      */
-    public PageInfoDTO(List<T> list, Integer pageSize, Integer startPage) {
+    public PageInfoDTO(List list, Integer pageSize, Integer startPage) {
         this.list = list;
         this.totalCount = list.size();
         this.pageSize = pageSize;
@@ -50,9 +52,10 @@ public class PageInfoDTO<T> {
 
 
     /**
-     * 分页
+     * baomidou  mybatis-plus
+     * @param page 分页信息
      */
-    public PageInfoDTO(IPage<T> page) {
+    public PageInfoDTO(IPage page) {
         this.list = page.getRecords();
         this.totalCount = (int) page.getTotal();
         this.pageSize = (int) page.getSize();
@@ -60,8 +63,11 @@ public class PageInfoDTO<T> {
         this.totalPage = (int) page.getPages();
     }
 
-
-    public PageInfoDTO(PageInfo<T> pageInfo) {
+    /**
+     * pagehelper
+     * @param pageInfo 分页信息
+     */
+    public PageInfoDTO(PageInfo pageInfo) {
         this.list = pageInfo.getList();
         this.totalCount = (int) pageInfo.getTotal();
         this.pageSize = pageInfo.getPageSize();
@@ -69,8 +75,8 @@ public class PageInfoDTO<T> {
         this.totalPage = pageInfo.getPages();
     }
 
-    public PageInfoDTO(List<T> list) {
-        PageInfo<T> page = new PageInfo<T>(list);
+    public PageInfoDTO(List list) {
+        PageInfo page = new PageInfo(list);
         this.list = page.getList();
         this.totalCount = (int) page.getTotal();
         this.pageSize = (int) page.getPageSize();
@@ -79,18 +85,24 @@ public class PageInfoDTO<T> {
     }
 
 
-    public PageInfoDTO(Page page, List<T> dogInfoList) {
-        this.list = dogInfoList;
+    /**
+     * github pagehelper 分页插件
+     *
+     * @param page 分页信息
+     * @param data 数据
+     */
+    public PageInfoDTO(Page page, List data) {
+        this.list = data;
         if (page != null) {
             this.totalCount = (int) page.getTotal();
             this.pageSize = page.getPageSize();
-            this.startPage = (int) page.getPageNum();
-            this.totalPage = (int) page.getPages();
+            this.startPage = page.getPageNum();
+            this.totalPage = page.getPages();
         } else {
-            this.totalCount = dogInfoList.size();
-            this.pageSize = dogInfoList.size();
+            this.totalCount = data.size();
+            this.pageSize = data.size();
             this.startPage = 1;
-            this.totalPage = dogInfoList.size() > 0 ? 1 : 0;
+            this.totalPage = data.size() > 0 ? 1 : 0;
         }
 
     }

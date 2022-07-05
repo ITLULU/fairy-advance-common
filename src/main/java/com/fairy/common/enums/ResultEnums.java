@@ -43,6 +43,8 @@ public enum ResultEnums   {
     MANY_REQUEST_ERROR("500","后端服务触发流控"),
     BACK_DEGRADE_ERROR("500","后端服务触发降级"),
     JWT_TOKEN_EXPIRE("500","token校验异常"),
+    ACCOUNT_ERROR("500","用户名或密码不正确"),
+    LOGIN_ERROR("500","登录出错")
 
     ;
 

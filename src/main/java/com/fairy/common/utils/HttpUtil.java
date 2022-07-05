@@ -1,7 +1,7 @@
 package com.fairy.common.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.fairy.common.exception.ResultException;
+import com.fairy.common.exception.CommonException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.*;
@@ -25,7 +25,7 @@ import java.util.Map;
  * @date 2022/4/2 20:54
  */
 @Slf4j
-public class HttpUtils {
+public class HttpUtil {
 
 
     public static String getResponseString(CloseableHttpResponse httpResponse) {
@@ -57,7 +57,7 @@ public class HttpUtils {
             return httpResponse;
         } catch (IOException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         } finally {
             httpclient.close();
         }
@@ -85,7 +85,7 @@ public class HttpUtils {
             return httpResponse;
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         } finally {
             httpclient.close();
         }
@@ -116,7 +116,7 @@ public class HttpUtils {
             return httpResponse;
         } catch (IOException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         } finally {
             httpclient.close();
         }
@@ -139,7 +139,7 @@ public class HttpUtils {
             return httpResponse;
         } catch (IOException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         } finally {
             try {
                 httpclient.close();
@@ -170,7 +170,7 @@ public class HttpUtils {
             return httpResponse;
         } catch (IOException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         }
     }
 
@@ -188,7 +188,7 @@ public class HttpUtils {
             httpResponse = httpclient.execute(httpdel);
         } catch (IOException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         } finally {
             httpclient.close();
         }

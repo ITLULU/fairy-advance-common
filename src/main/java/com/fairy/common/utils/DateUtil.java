@@ -1,6 +1,6 @@
 package com.fairy.common.utils;
 
-import com.fairy.common.exception.ResultException;
+import com.fairy.common.exception.CommonException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
@@ -19,7 +19,7 @@ import java.util.*;
  * @date 2022/4/11 10:31
  */
 @Slf4j
-public class DateUtils {
+public class DateUtil {
     /**
      * 日期格式转换
      */
@@ -74,7 +74,7 @@ public class DateUtils {
             return date;
         } catch (ParseException e) {
             e.printStackTrace();
-            throw ResultException.create(e.getMessage());
+            throw CommonException.create(e.getMessage());
         }
     }
 
@@ -311,8 +311,8 @@ public class DateUtils {
 
     public static void main(String[] args) {
 
-        log.info(DateUtils.parseDate(new Date(), NUMBER_PATTERN_ALL));
-        log.info(DateUtils.getDate(new Date()) + "");
+        log.info(DateUtil.parseDate(new Date(), NUMBER_PATTERN_ALL));
+        log.info(DateUtil.getDate(new Date()) + "");
 
         Map<String,Object>map = new HashMap<>();
         System.out.println((String)map.get("ri"));

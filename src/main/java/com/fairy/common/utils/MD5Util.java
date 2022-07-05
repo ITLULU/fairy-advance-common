@@ -3,7 +3,12 @@ package com.fairy.common.utils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.Md5Crypt;
+import org.apache.commons.codec.net.BCodec;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import sun.security.util.Password;
 
+import java.security.SecureRandom;
 import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -29,26 +34,29 @@ public class MD5Util {
         return password;
     }
 
-    private final static Integer default_size =2;
+    private final static Integer default_size = 2;
+
     public static String MD5SaltEncryptSTSize(String data) {
         String pass = Md5Crypt.md5Crypt(data.getBytes(), createSalt(default_size));
         return pass;
     }
+
     /**
      * Md5Crypt md5加盐值
      *
      * @param data
      * @return 加密结果
      */
-    public static String MD5SaltEncryptST(String data,Integer size) {
+    public static String MD5SaltEncryptST(String data, Integer size) {
         String pass = Md5Crypt.md5Crypt(data.getBytes(), createSalt(size));
         return pass;
     }
 
     public static String MD5SaltEncryptST(String data) {
-        String pass = Md5Crypt.md5Crypt(data.getBytes(),new Random());
+        String pass = Md5Crypt.md5Crypt(data.getBytes(), new Random());
         return pass;
     }
+
     private static final String salt_head = "$1$sal";
 
     /**
@@ -65,13 +73,34 @@ public class MD5Util {
             int sub = random.nextInt(chs.length() - 1);
             salt += chs.indexOf(sub);
         }
-        log.info("生成盐值：{}",salt);
+        log.info("生成盐值：{}", salt);
         return salt;
     }
 
-    public static void main(String[] args) throws Exception {
-        log.info(MD5SaltEncryptST("11111"));
-        log.info(MD5SaltEncryptST("11111"));
+    //默认生成长度为10的密码
+    private static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(BCryptPasswordEncoder.BCryptVersion.$2B, 10, new SecureRandom());
 
+
+    /**
+     * security 安全加密  加密后无法解密只能进行匹配  重置密码
+     * 两次加密结果不一致
+     *
+     * @param data
+     * @return
+     */
+    public static String EncryptStr(String data) {
+        String pass = passwordEncoder.encode(data);
+        return pass;
+    }
+
+
+    public static void main(String[] args) throws Exception {
+//        log.info(MD5SaltEncryptST("11111"));
+//        log.info(MD5SaltEncryptST("11111"));
+
+        log.info(EncryptStr("12121"));
+        log.info(EncryptStr("12121"));
+
+        log.info("匹配：{}", passwordEncoder.matches("12121", passwordEncoder.encode("12121")));
     }
 }

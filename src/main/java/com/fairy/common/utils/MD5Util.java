@@ -77,7 +77,9 @@ public class MD5Util {
         return salt;
     }
 
-    //默认生成长度为10的密码
+    /**
+     * 默认生成长度为10的密码
+     */
     private static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(BCryptPasswordEncoder.BCryptVersion.$2B, 10, new SecureRandom());
 
 

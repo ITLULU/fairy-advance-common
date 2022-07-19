@@ -73,7 +73,6 @@ public class MD5Util {
             int sub = random.nextInt(chs.length() - 1);
             salt += chs.indexOf(sub);
         }
-        log.info("生成盐值：{}", salt);
         return salt;
     }
 

@@ -127,7 +127,7 @@ public class EncryptUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        String encry = DESEncryptST("1212");
+        String encry = DESEncryptST("root");
         log.info(encry);
         log.info(DESDecryptST(encry));
     }

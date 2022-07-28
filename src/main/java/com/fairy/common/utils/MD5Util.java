@@ -95,13 +95,17 @@ public class MD5Util {
     }
 
 
+    public static boolean match(String pass ,String encryPass){
+        return passwordEncoder.matches(pass,encryPass);
+    }
+
     public static void main(String[] args) throws Exception {
 //        log.info(MD5SaltEncryptST("11111"));
 //        log.info(MD5SaltEncryptST("11111"));
 
-        log.info(EncryptStr("12121"));
-        log.info(EncryptStr("12121"));
+        log.info(EncryptStr("admin"));
+        log.info(EncryptStr("admin"));
 
-        log.info("匹配：{}", passwordEncoder.matches("12121", passwordEncoder.encode("12121")));
+        log.info("匹配：{}",match("admin", passwordEncoder.encode("admin")));
     }
 }

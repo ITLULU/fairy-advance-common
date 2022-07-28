@@ -1,7 +1,10 @@
 package com.fairy.common.response;
 
 import com.fairy.common.enums.ResultEnums;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 通用结果返回
@@ -9,6 +12,9 @@ import lombok.Data;
  * @version 1.0
  * @date  2022/1/25 13:39
  */
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Data
 public class CommonResponse<T> {
     private boolean success;

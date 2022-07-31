@@ -1,8 +1,10 @@
-package com.fairy.common.model.dto;
+package com.fairy.common.page;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -13,6 +15,8 @@ import java.util.List;
  * @version 1.0
  * @date 2022/6/26 17:49
  */
+@Data
+@NoArgsConstructor
 public class PageInfoDTO {
     /**
      * 总记录数
@@ -53,6 +57,7 @@ public class PageInfoDTO {
 
     /**
      * baomidou  mybatis-plus
+     *
      * @param page 分页信息
      */
     public PageInfoDTO(IPage page) {
@@ -65,6 +70,7 @@ public class PageInfoDTO {
 
     /**
      * pagehelper
+     *
      * @param pageInfo 分页信息
      */
     public PageInfoDTO(PageInfo pageInfo) {
@@ -84,6 +90,13 @@ public class PageInfoDTO {
         this.totalPage = (int) page.getPages();
     }
 
+    public PageInfoDTO(org.springframework.data.domain.Page page) {
+        this.list = page.getContent();
+        this.totalCount = (int) page.getTotalElements();
+        this.pageSize = (int) page.getSize();
+        this.startPage = (int) page.getNumber();
+        this.totalPage = (int) page.getTotalPages();
+    }
 
     /**
      * github pagehelper 分页插件

@@ -44,7 +44,9 @@ public enum ResultEnums   {
     BACK_DEGRADE_ERROR("500","后端服务触发降级"),
     JWT_TOKEN_EXPIRE("500","token校验异常"),
     ACCOUNT_ERROR("500","用户名或密码不正确"),
-    LOGIN_ERROR("500","登录出错")
+    LOGIN_ERROR("500","登录出错"),
+    TOMANY_REQUEST_ERROR("502","后端服务触发流控"),
+    BACKGROUD_DEGRADE_ERROR("500","后端服务触发降级"),
 
     ;
 

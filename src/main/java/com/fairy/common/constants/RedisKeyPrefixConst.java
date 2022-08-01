@@ -8,6 +8,9 @@ package com.fairy.common.constants;
  */
 public class RedisKeyPrefixConst {
 
+    /**用户角色权限*/
+    public final static String USER_ROLE_PERMISSIOn = "user:role:permission:";
+
     /**
      * 产品详情内容缓存前缀
      */

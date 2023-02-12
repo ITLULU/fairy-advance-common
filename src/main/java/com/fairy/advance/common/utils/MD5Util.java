@@ -1,17 +1,13 @@
-package com.fairy.common.utils;
+package com.fairy.advance.common.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.Md5Crypt;
-import org.apache.commons.codec.net.BCodec;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import sun.security.util.Password;
 
 import java.security.SecureRandom;
-import java.util.LinkedHashSet;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * @author hll

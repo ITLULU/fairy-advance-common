@@ -1,10 +1,10 @@
-package com.fairy.common.utils;
+package com.fairy.advance.common.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fairy.common.constants.Constant;
-import org.apache.commons.lang3.StringUtils;
+import com.fairy.advance.common.constans.Constant;
+import io.micrometer.core.instrument.util.StringUtils;
 
 import java.util.Map;
 

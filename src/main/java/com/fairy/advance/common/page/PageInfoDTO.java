@@ -1,4 +1,4 @@
-package com.fairy.common.page;
+package com.fairy.advance.common.page;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.Page;

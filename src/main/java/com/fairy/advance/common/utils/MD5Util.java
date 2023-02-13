@@ -1,6 +1,5 @@
 package com.fairy.advance.common.utils;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,10 +13,7 @@ import java.util.Random;
  * @version 1.0
  * @date 2022/7/5 9:54
  */
-@Slf4j
 public class MD5Util {
-
-
     /**
      * 加密
      *
@@ -99,9 +95,9 @@ public class MD5Util {
 //        log.info(MD5SaltEncryptST("11111"));
 //        log.info(MD5SaltEncryptST("11111"));
 
-        log.info(EncryptStr("admin"));
-        log.info(EncryptStr("admin"));
+        System.out.println(EncryptStr("admin"));
+        System.out.println(EncryptStr("admin"));
 
-        log.info("匹配：{}",match("admin", passwordEncoder.encode("admin")));
+        System.out.println(String.format("匹配：%s",match("admin", passwordEncoder.encode("admin"))));
     }
 }

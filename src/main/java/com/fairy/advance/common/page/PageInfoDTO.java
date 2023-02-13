@@ -3,8 +3,6 @@ package com.fairy.advance.common.page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -15,8 +13,6 @@ import java.util.List;
  * @version 1.0
  * @date 2022/6/26 17:49
  */
-@Data
-@NoArgsConstructor
 public class PageInfoDTO {
     /**
      * 总记录数
@@ -38,6 +34,46 @@ public class PageInfoDTO {
      * 列表数据
      */
     private List list;
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public Integer getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(Integer totalPage) {
+        this.totalPage = totalPage;
+    }
+
+    public Integer getStartPage() {
+        return startPage;
+    }
+
+    public void setStartPage(Integer startPage) {
+        this.startPage = startPage;
+    }
+
+    public List getList() {
+        return list;
+    }
+
+    public void setList(List list) {
+        this.list = list;
+    }
 
     /**
      * 分页
